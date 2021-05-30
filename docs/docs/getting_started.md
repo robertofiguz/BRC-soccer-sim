@@ -1,16 +1,8 @@
-# RCJ Soccer Simulator
-
-This is the official repository of the RoboCupJunior Soccer Simulator. The
-simulator is based on [Webots](https://github.com/cyberbotics/webots) and this
-repository provides both the "automatic referee" (which implements the [Soccer
-Simulated Rules](https://github.com/RoboCupJuniorTC/soccer-rules-simulation))
-as well as a sample simulated team of robots with some basic strategy.
-
-![Soccer Sim](./docs/docs/images/soccer_sim.png)
-
-*Learn more in the [documentation](https://robocupjuniortc.github.io/rcj-soccer-sim/).*
 
 # How do I try this out?
+
+It's easy, you can set it up in about 10 minutes!
+(plus download time)
 
 ## Installation
 

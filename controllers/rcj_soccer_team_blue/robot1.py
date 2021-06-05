@@ -4,17 +4,19 @@
 import math
 
 # You can also import scripts that you put into the folder with controller
-from rcj_soccer_robot import RCJSoccerRobot, TIME_STEP
 import utils
+from rcj_soccer_robot import RCJSoccerRobot, TIME_STEP
 
 
 class MyRobot1(RCJSoccerRobot):
+    closer = False
+
+
     def run(self):
         while self.robot.step(TIME_STEP) != -1:
             if self.is_new_data():
                 data = self.get_new_data()
-
-                # Get the position of our robot
+                self.closer = utils.am_i_closer(self.team, self.name, data)                # Get the position of our robot
                 robot_pos = data[self.name]
                 # Get the position of the ball
                 ball_pos = data['ball']

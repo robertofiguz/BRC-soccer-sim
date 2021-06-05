@@ -24,3 +24,6 @@ Field Dimensions:
 - use teammates positions to pass the ball (probably unreliable but useful for long range isolated) (Move robot to end of field)
 - use ball position to calculate it's heading
 - predict ball direction by summing vectors by calculating every robot movement and ball movement. (robot radius, position,vector, ball position, ball vector)
+- use reinforcement learning ML to teach robots to play:
+  - need insight into simulation(when goals are scored, robots position and access to speeds and input variabvles into robot behaviour, robot status(if there is lack of movement), possibly oponents coordinates to to help learn to avoid them)         
+- code should be modular. kicking passing. game logic etc. this way each team member can more easily and autonomously contribute to the team.

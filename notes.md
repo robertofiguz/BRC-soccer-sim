@@ -27,3 +27,5 @@ Field Dimensions:
 - use reinforcement learning ML to teach robots to play:
   - need insight into simulation(when goals are scored, robots position and access to speeds and input variabvles into robot behaviour, robot status(if there is lack of movement), possibly oponents coordinates to to help learn to avoid them)         
 - code should be modular. kicking passing. game logic etc. this way each team member can more easily and autonomously contribute to the team.
+- create motion scripts:
+  - steps used to perform actions on call such as kicking, passing etc. Possibly implement multiple ways to set movements example: tag "to_position:[x,y]" or "move:[L_motor_speed, R_motos_speed, time]" 

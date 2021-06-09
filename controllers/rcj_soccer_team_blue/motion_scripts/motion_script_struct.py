@@ -12,48 +12,33 @@ class motion_script:
 
     def add_stage(self, stage: Stage):
         self._stages.append(stage)
-    #check how this ^ is used
+
     @property
     def stages(self):
         return self._stages
 
+    def move_type(self):
+        if self._move:
+            return "move"
+        return "location"
+
 class Stage:
     def __init__(
         self,
-        
-        speed_mode: bool = True,
-        target: List[float] = None,
+        target: List[Target] = None,
         time: float = None,
     ):
-    #set target to new class
-        self._speed_mode = speed_mode,
         self._target = target or [],
         self._time = time or None
 
-    def add_keyframe(self, keyframe: KeyFrame):
-        self._keyframes.append(KeyFrame)
 
-    @property
-    def keyframes(self):
-        return self._keyframes
-
-class KeyFrame:
+class Target:
     def __init__(
-            self, move_cycles: int, target_position: dict, pause_cycles: int = 0
+        self, 
+        location: List[float] = None,
+        move: float = None
     ):
-        #todo: add target position/movement(speed)
-        self._pause_cycles = pause_cycles
-        self._move_cycles = move_cycles
-        self._target_position = target_position
-        
-    @property
-    def pause_cycles(self):
-        return self._pause_cycles
-
-    @property
-    def move_cycles(self):
-        return self._move_cycles
-
-    @property
-    def target_angles(self):
-        return self._target_position
+        self._location = location or []
+        self._move = move or None
+    
+# add keyframe logic to calculate wheel speed etc.

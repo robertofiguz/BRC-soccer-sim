@@ -1,10 +1,18 @@
 
-stand_ready = MotionScript(
+kick = MotionScript(
     name="kick",
     stages=[
         Stage(
-            speed_mode = False,
-            target = [20,1]
+            target=[
+                Target(move=-5)
+            ],
+            time = 1
+        ),
+        Stage(
+            target=[
+                Target(move=5)
+            ],
+            time = 0.5
         )
 
 ]

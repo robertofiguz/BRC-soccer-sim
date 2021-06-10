@@ -29,3 +29,10 @@ Field Dimensions:
 - code should be modular. kicking passing. game logic etc. this way each team member can more easily and autonomously contribute to the team.
 - create motion scripts:
   - steps used to perform actions on call such as kicking, passing etc. Possibly implement multiple ways to set movements example: tag "to_position:[x,y]" or "move:[L_motor_speed, R_motos_speed, time]" 
+- calculate how far away I can kick the ball
+- decide wether to shoot to the goal or "pass" based on distance to goal, orientation and obstacles. Create a can score variable that takes in account all the variables, wether there are obstacles, distance etc.
+- Implement physics ???
+- Is it ok to calculate movement based on wheel radius and speed? translate speed to rotations * circunference
+- Implement a rule to follow ball not using motion_scripts, motion_scripts should be used for specific movements such as kicking. diverting etc.
+- where to implement movement interpretation? 
+  -  should it be based inside struct?, how to keep interpreter inside the motion script? what loops over it?(unitl condition is met)-check boldhearts

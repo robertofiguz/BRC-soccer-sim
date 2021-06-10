@@ -30,15 +30,19 @@ class Stage:
     ):
         self._target = target or [],
         self._time = time or None
+        #todo: is tme the best measurement taking in account how multiple movements in a tage and a single timeframe involve complex possibly unecessary calculations??
+        #possibly speed?
 
 
 class Target:
     def __init__(
         self, 
         location: List[float] = None,
-        move: float = None
+        move: float = None,
+        speed: float = 1, #set a range? 0-5?
     ):
         self._location = location or []
         self._move = move or None
+        self._speed = speed or 1
     
 # add keyframe logic to calculate wheel speed etc.

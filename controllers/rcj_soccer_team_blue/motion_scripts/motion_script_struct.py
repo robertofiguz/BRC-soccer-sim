@@ -21,6 +21,16 @@ class motion_script:
         if self._move:
             return "move"
         return "location"
+    
+    def run(self):
+        #should I load the script name or the variable containing the script class(MotionScript)
+        #I dont need to pass in the cscript name or content since the class contains it and the function run can access the variables by self.
+        for i in Stage:
+            for i in target:
+                #calculate speed * constant calibrating speed to movement time and for x seconds set motors speed to x
+                #speed normalization consists in the process of converting speed to a variable that when multiplied by the distance will give us the time it's moving at defined speed
+                time = (speed / distance) * constant
+                #how will it set motor speed for required time? return and handled on the other side?  would rather handle inside  this class
 
 class Stage:
     def __init__(

@@ -14,6 +14,5 @@ kick = MotionScript(
             ]#,
             #time = 0.5
         )
-
 ]
 )

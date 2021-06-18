@@ -9,6 +9,26 @@ N_ROBOTS = len(ROBOT_NAMES)
 
 class RCJSoccerRobot:
     def __init__(self, robot):
+        self.initial_positions={
+        "B1":{
+            "x":0.45,
+            "y":0.45,
+            "z":0,
+            "heading":3.14
+        },
+        "B2":{
+            "x":0,
+            "y":0,
+            "z":0,
+            "heading":3.14
+        },
+        "B3":{
+            "x":0.45,
+            "y":-0.45,
+            "z":0,
+            "heading":3.14
+        }
+}
         self.robot = robot
         self.name = self.robot.getName()
         self.team = self.name[0]

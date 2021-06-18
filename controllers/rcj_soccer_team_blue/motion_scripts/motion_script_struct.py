@@ -1,6 +1,5 @@
 from typing import List
 
-
 class motion_script:
     def __init__(self, name: str, stages: Optional[List[Stage]] = None):
         self._name = name
@@ -55,4 +54,3 @@ class Target:
         self._move = move or None
         self._speed = speed or 1
     
-# add keyframe logic to calculate wheel speed etc.

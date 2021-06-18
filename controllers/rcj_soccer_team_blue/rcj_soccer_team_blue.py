@@ -4,7 +4,6 @@ from robot1 import MyRobot1
 from robot2 import MyRobot2
 from robot3 import MyRobot3
 
-
 robot = Robot()
 name = robot.getName()
 robot_number = int(name[1])

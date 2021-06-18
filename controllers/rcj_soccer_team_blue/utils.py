@@ -1,7 +1,6 @@
 import math
 
 
-
 def __getAngle(objective: dict, robot_pos: dict):
 
         robot_angle: float = robot_pos['orientation']
@@ -42,7 +41,7 @@ def move_to(self, objective: dict, robot_pos: dict):
     self.right_motor.setVelocity(right_speed)
 
 def get_distance(loc_1: dict, loc_2: dict) -> float:
-   return float(math.sqrt( ((loc_1['x']-loc_2['x'])**2)+((loc_1['y']-loc_2['y'])**2) ))
+   return float(math.sqrt(((loc_1['x']-loc_2['x'])**2)+((loc_1['y']-loc_2['y'])**2) ))
 def get_direction(ball_angle: float) -> int:
     """Get direction to navigate robot to face the ball
 
@@ -60,9 +59,19 @@ def get_direction(ball_angle: float) -> int:
 def am_i_attacking(team, data) -> bool:
     players = [data[team+str(1)], data[team+str(2)], data[team+str(3)]]
     for i in players:
-        if possesses_ball():
+        if possesses_ball(i, data['ball']):
             return True
     return False
+
+def am_i_defending(team, data) -> bool:
+    players = data.copy()
+    del players['ball']
+    del players['waiting_for_kickoff']
+    for key in players:
+        if possesses_ball(players[key], data['ball']):
+            return True
+    return False
+
 
 def am_i_closer(team, name, data) -> bool:
     
@@ -81,9 +90,9 @@ def am_i_closer(team, name, data) -> bool:
         return True
     return False
 
-def possesses_ball(name, data) -> bool:
-    ball_dist_threshold = 0.05 #todo: set threshold to reasonable value
-    if (get_distance(data[name], data['ball'])<ball_dist_threshold ):
+def possesses_ball(player, ball) -> bool:
+    ball_dist_threshold = 0.1 #todo: set threshold to reasonable value
+    if (get_distance(player, ball)<ball_dist_threshold ):
         return True
     return False
 
